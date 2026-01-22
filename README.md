@@ -270,7 +270,7 @@ NAVI_LOG=navi_navi::proxy=trace navi-navi
 ## How It Works
 
 ```
-┌──────────┐                              ┌──────────┐
+┌──────────┐                                      ┌──────────┐
 │ Client A │──connect──►┌────────────┐◄──connect──│ Client B │
 └──────────┘            │            │            └──────────┘
                         │ navi-navi  │
