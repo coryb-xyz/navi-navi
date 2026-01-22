@@ -1,0 +1,26 @@
+[package]
+name = "navi-navi"
+version = "0.1.0"
+edition = "2021"
+description = "A listen-listen TCP proxy for bridging two client applications"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tokio-util = "0.7"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+clap = { version = "4", features = ["derive", "env"] }
+toml = "0.8"
+serde = { version = "1", features = ["derive"] }
+directories = "5"
+hyper = { version = "1", features = ["http1", "server"] }
+http-body-util = "0.1"
+hyper-util = { version = "0.1", features = ["tokio"] }
+
+[target.'cfg(windows)'.dependencies]
+windows-service = "0.7"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
